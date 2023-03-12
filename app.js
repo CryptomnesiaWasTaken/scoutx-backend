@@ -45,15 +45,10 @@ const authorizationMiddleware = require("./middleware/authorization");
 const notFoundMiddleware = require("./middleware/not-found");
 
 app.use(xss());
-	res.header("Access-Control-Allow-Origin", "*");
 app.use(helmet());
-	res.header("Access-Control-Allow-Origin", "*");
 app.use(express.json());
-	res.header("Access-Control-Allow-Origin", "*");
 app.use(fileUpload({ useTempFiles: true }));
-	res.header("Access-Control-Allow-Origin", "*");
 app.use(cors({ origin: clientURL }));
-	res.header("Access-Control-Allow-Origin", "*");
 
 app.get("/", (req, res) => {
 	res.status(200).json({ message: "welcome" });
